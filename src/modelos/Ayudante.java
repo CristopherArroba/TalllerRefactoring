@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Ayudante {
     protected Estudiante est;
     public ArrayList<Paralelo> paralelos;
-    String a;
+    
     Ayudante(Estudiante e){
     	est = e;
     }
