@@ -33,25 +33,14 @@ public class Estudiante extends Persona{
         this.facultad = facultad;
     }
     
-   public double notaTeorica(double nexamen,double ndeberes, double nlecciones){
-        double notaTeorica = (nexamen+ndeberes+nlecciones)*0.80;
-        return notaTeorica;
-    }
-    
-    public double notaPractica(double ntalleres){
-        double notaPractico=(ntalleres)*0.20;
-        return notaPractico;
-    
-    }
-    
-    
+   
     //Calcula y devuelve la nota contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
     public double CalcularNota(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
         double nota=0;
         for(Paralelo par:paralelos){
             if(p.equals(par)){
-                double notaTeorica = notaTeorica(nexamen, ndeberes, nlecciones);
-                double notaPractica = notaPractica(ntalleres);
+                double notaTeorica = (nexamen+ndeberes+nlecciones)*0.80 ;
+                double notaPractica = (ntalleres)*0.20;;
                 nota=notaTeorica+notaPractica;
             }
         }
@@ -63,7 +52,6 @@ public class Estudiante extends Persona{
         return notaInicial;
         
     }
-    
     
     public double CalcularNotaFinal(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
         double notaFinal = CalcularNota(p, nexamen, ndeberes, nlecciones, ntalleres);
@@ -84,10 +72,4 @@ public class Estudiante extends Persona{
         
     }
 }
-        
-    
-    
-    
-            
-        
         
